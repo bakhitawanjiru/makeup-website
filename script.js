@@ -477,8 +477,65 @@ function updateCartCount() {
     badge.style.display = count > 0 ? 'block' : 'none';
 }
 
-// Initialize on page load
+
 document.addEventListener('DOMContentLoaded', () => {
     displayCart();
     updateCartCount();
 });
+
+if (!localStorage.getItem('users')) {
+    localStorage.setItem('users', JSON.stringify([]));
+}
+
+function handleSignup(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    
+    if (!email || !password) {
+        showNotification('Please fill in all fields', 'error');
+        return false;
+    }
+
+    
+    const users = JSON.parse(localStorage.getItem('users'));
+    if (users.some(user => user.email === email)) {
+        showNotification('Email already registered', 'error');
+        return false;
+    }
+
+  
+    users.push({
+        email: email,
+        password: password, 
+        dateJoined: new Date().toISOString()
+    });
+
+    
+    localStorage.setItem('users', JSON.stringify(users));
+
+   
+    showNotification('Account created successfully!', 'success');
+
+    
+    setTimeout(() => {
+        window.location.href = 'cont.html';
+    }, 1500);
+
+    return false;
+}
+
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i>
+        <div class="notification-content">
+            <p>${message}</p>
+        </div>
+    `;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
