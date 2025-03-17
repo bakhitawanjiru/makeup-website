@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " >
+        <div  class="container-fluid">
+          <a class="navbar-brand" href="index.html"> <img src="Beige Minimalist Makeup Artist Logo.png" alt="logo" width="100px" height="100px"></a>
+       
+          <button class="navbar-toggler" type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="hair.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hair and wigs
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="humanh.html">Human Hair</a></li>
+                <li><a class="dropdown-item" href="wigs.html">Synthetic wigs</a></li>
+                <li><a class="dropdown-item" href="braids.html">Braids</a></li>
+              </ul>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Makeup 
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="foundation.html">Foundation</a></li>
+                  <li><a class="dropdown-item" href="concealer.html">Concealer//Contour</a></li>
+                  <li><a class="dropdown-item" href="eyeshadow.html">Eye Makeup</a></li>
+                  <li><a class="dropdown-item" href="lip.html">lip Combos</a></li>
+              </ul>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact us</a>
+             
+            </li>
+           
+      </ul>
+
+     <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a> 
+        </ul>
+      
+       
+      </div>
+    </nav>
+    <div class="signup-container">
+      <form class="signup-form" id="signupForm" onsubmit="return handleSignup(event)">
+          <h2 class="text-center mb-4">Create Account</h2>
+          
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" required>
+          </div>
+  
+          <button type="submit" class="signup-btn">Sign Up</button>
+  
+          <div class="divider">or</div>
+  
+          <div class="social-login">
+              <button type="button" class="social-btn google-btn">
+                  <i class="fab fa-google me-2"></i> Continue with Google
+              </button>
+              <button type="button" class="social-btn facebook-btn">
+                  <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
+              </button>
+          </div>
+      </form>
+  </div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+</body>
+</html>
