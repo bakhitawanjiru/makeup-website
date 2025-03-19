@@ -129,7 +129,7 @@ function checkout() {
         window.location.href = `order-confirmation.html?orderId=${orderSummary.orderId}`;
     }, 2000);
 }
-// Add these functions after your existing cart functions
+
 
 function checkout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -139,13 +139,13 @@ function checkout() {
         return;
     }
 
-    // Calculate total
+   
     const total = cart.reduce((sum, item) => {
         const price = parseInt(item.price.replace(/[^0-9]+/g, ''));
         return sum + price;
     }, 0);
 
-    // Create order object
+    
     const order = {
         orderId: generateOrderId(),
         items: cart,
@@ -154,13 +154,13 @@ function checkout() {
         status: 'confirmed'
     };
 
-    // Save order
+    
     saveOrder(order);
 
-    // Clear cart
+ 
     localStorage.setItem('cart', '[]');
 
-    // Show success message and redirect
+   
     showNotification('Order placed successfully!');
     setTimeout(() => {
         window.location.href = `check.html?orderId=${order.orderId}`;

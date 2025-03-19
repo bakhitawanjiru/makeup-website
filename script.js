@@ -521,7 +521,7 @@ function handleSignup(event) {
 
     
     setTimeout(() => {
-        window.location.href = 'contact.html';
+        window.location.href ='contact.html';
     }, 1500);
 
     return false;
